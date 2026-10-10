@@ -1,0 +1,11 @@
+package pages;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+public class CartPage {
+    WebDriver driver;
+    @FindBy(xpath="//a[text()='Proceed To Checkout']") WebElement checkoutBtn;
+    public CartPage(WebDriver d){this.driver=d; PageFactory.initElements(d,this);}
+    public void proceedToCheckout(){checkoutBtn.click();}
+}
